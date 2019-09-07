@@ -1,5 +1,6 @@
 package com.project.discretaii_project.Activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.project.discretaii_project.R
@@ -15,32 +16,25 @@ class Game : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
 
-        showQuestion()
-        bt_next.setOnClickListener{
-            //nextquestion(2)
-
-            id_question.text = getString(questions[counter])
-            counter ++
-        }
-    }
-
-    fun showQuestion(){
-
         id_question.text = getString(R.string.q1)
-    }
 
-    private fun nextquestion(i: Int): Int{
-        return when (i) {
-            1 -> {
-                counter--
-                if(counter<0) counter = 2
-                questions[counter]
-            }
-            else -> {
-                counter++
-                if(counter>2) counter = 0
-                questions[counter]
-            }
+        bt_next.setOnClickListener{
+            nextQuestion()
         }
     }
+
+    fun nextQuestion(){
+        if(counter==6){
+            val intent = Intent(this, result::class.java)
+            startActivity(intent)
+        }
+        else {
+            id_question.text = getString(questions[counter])
+            counter++
+        }
+
+    }
+
+
+
 }
