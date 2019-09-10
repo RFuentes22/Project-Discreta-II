@@ -5,6 +5,6 @@
     <string name="q3">Un restaurante ofrece 6 postres distintos. Encuentre el numero de formas en que un cliente puede elegir X postres.</string>
     <string name="q4">Una mujer tiene X amigos cercanos. Encuentre el numero de formas en que la mujer puede invitar a cenar a cinco de sus amigos. Sin restricciones</string>
     <string name="q5">En una caja hay 6 calcetines azules y 4 calcetines blancos. Encuentre el numero de formas en que es posible extraer X calcetines de la caja. Sin retricciones</string>
-    <string name="q6">Se tira X dados encuentre la probabilidad que el dado muestre un numero impar. </string>
+    <string name="q6">X personas se han presentado a un concurso de pintura. El concurso otorga $200 al primer lugar y $100 al segundo. ¿De cuántas formas se pueden repartir los premios de primer y segundo lugar? </string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
 </resources>

@@ -13,9 +13,17 @@ class result : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
-        btn_retry.setOnClickListener(){
+
+        val buenas = intent.getStringExtra("buenas")
+        val malas = intent.getStringExtra("malas")
+
+        correct_ans.text = buenas
+        wrong_ans.text = malas
+
+        btn_retry.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+
         }
     }
     override fun onBackPressed() {}
