@@ -73,14 +73,15 @@ class Game : AppCompatActivity() {
     }
 
     fun validar(id: Int): Boolean {
-        var r: Int
+        val r: Int
+        val x = et_x.text.toString().toInt()
         return when (id) {
             1 -> {
                 r = (et_x.text.toString().toInt()).pow(3)
                 // Log.d("r",r.toString())
                 // Log.d("myresult",et_answer.text.toString())
                 if (r == et_answer.text.toString().toInt()) {
-                    //Log.d("Hola", "nel")
+
                     true
                 } else {
                     false
@@ -99,7 +100,6 @@ class Game : AppCompatActivity() {
             }
 
             3 -> {
-                val x = et_x.text.toString().toInt()
                 r = (6.factorial() / (x.factorial() * (6 - x).factorial())).toInt()
                 if (r == et_answer.text.toString().toInt()) {
                     true
@@ -109,7 +109,6 @@ class Game : AppCompatActivity() {
             }
 
             4 -> {
-                val x = et_x.text.toString().toInt()
                 r = (x.factorial() / (5.factorial() * (x - 5).factorial())).toInt()
                 if (r == et_answer.text.toString().toInt()) {
                     true
@@ -119,8 +118,8 @@ class Game : AppCompatActivity() {
             }
 
             5 -> {
-                val x = et_x.text.toString().toInt()
-                r = (10.factorial() / (x.factorial() * (10 - x).factorial())).toInt()
+                r = (x.factorial()/ (3.factorial()*4.factorial()*2.factorial()) ).toInt()
+                Log.d("res",r.toString())
                 if (r == et_answer.text.toString().toInt()) {
                     true
                 } else {
@@ -129,7 +128,6 @@ class Game : AppCompatActivity() {
             }
 
             6 -> {
-                val x = et_x.text.toString().toInt()
                 r = (x.factorial() / ((x - 2).factorial())).toInt()
                 if (r == et_answer.text.toString().toInt()) {
                     true
