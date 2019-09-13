@@ -89,7 +89,7 @@ class Game : AppCompatActivity() {
             }
 
             2 -> {
-                r = et_x.text.toString().toInt().factorial().toInt()
+                r = (et_x.text.toString().toInt()-1).factorial().toInt()
                 Log.d("re", r.toString())
                 Log.d("myresult", et_answer.text.toString())
                 if (r == et_answer.text.toString().toLong().toInt()) {
