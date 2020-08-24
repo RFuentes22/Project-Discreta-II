@@ -14,10 +14,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        var intent: Intent
 
         btn_play.setOnClickListener {
-            val intent = Intent(this, Game::class.java)
+             intent = Intent(this, Game::class.java)
+            startActivity(intent)
+        }
+
+        about_btn.setOnClickListener {
+            intent = Intent(this, About::class.java)
             startActivity(intent)
         }
     }
