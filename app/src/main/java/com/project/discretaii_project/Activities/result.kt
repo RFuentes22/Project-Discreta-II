@@ -1,13 +1,11 @@
 package com.project.discretaii_project.Activities
 
-import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.project.discretaii_project.Activities.MainActivity
 import com.project.discretaii_project.R
 import kotlinx.android.synthetic.main.activity_result.*
-import kotlin.system.exitProcess
-import com.project.discretaii_project.Activities.MainActivity
 
 
 class result : AppCompatActivity() {
