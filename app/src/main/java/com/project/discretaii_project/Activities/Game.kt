@@ -1,10 +1,12 @@
 package com.project.discretaii_project.Activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.marcinmoskala.math.factorial
 import com.marcinmoskala.math.pow
 import com.project.discretaii_project.R
@@ -42,18 +44,28 @@ class Game : AppCompatActivity() {
                 nextQuestion()
 
             }
+
         }
     }
 
     fun validatempty(): Boolean {
-        if (et_x.text.isEmpty()) {
-            et_x!!.error = "Introduce X"
-            return false
+        if (counter == 5){
+            if (et_answer.text.isEmpty()) {
+                et_answer!!.error = "Introduce la respuesta"
+                return false
+            }
         }
-        if (et_answer.text.isEmpty()) {
-            et_answer!!.error = "Introduce la respuesta"
-            return false
+        else {
+            if (et_x.text.isEmpty()) {
+                et_x!!.error = "Introduce X"
+                return false
+            }
+            if (et_answer.text.isEmpty()) {
+                et_answer!!.error = "Introduce la respuesta"
+                return false
+            }
         }
+
         return true
     }
 
@@ -74,70 +86,62 @@ class Game : AppCompatActivity() {
 
     fun validar(id: Int): Boolean {
         val r: Int
-        val x = et_x.text.toString().toInt()
+        val x: Int = if (counter == 5){
+            0
+        } else et_x.text.toString().toInt()
         return when (id) {
             1 -> {
                 r = (et_x.text.toString().toInt()).pow(3)
                 // Log.d("r",r.toString())
                 // Log.d("myresult",et_answer.text.toString())
-                if (r == et_answer.text.toString().toInt()) {
-
-                    true
-                } else {
-                    false
-                }
+                r == et_answer.text.toString().toInt()
             }
 
             2 -> {
-                r = (et_x.text.toString().toInt()-1).factorial().toInt()
+                r = (et_x.text.toString().toInt() - 1).factorial().toInt()
                 Log.d("re", r.toString())
                 Log.d("myresult", et_answer.text.toString())
-                if (r == et_answer.text.toString().toLong().toInt()) {
-                    true
-                } else {
-                    false
-                }
+                r == et_answer.text.toString().toLong().toInt()
             }
 
             3 -> {
                 r = (6.factorial() / (x.factorial() * (6 - x).factorial())).toInt()
-                if (r == et_answer.text.toString().toInt()) {
-                    true
-                } else {
-                    false
-                }
+                r == et_answer.text.toString().toInt()
             }
 
             4 -> {
                 r = (x.factorial() / (5.factorial() * (x - 5).factorial())).toInt()
-                if (r == et_answer.text.toString().toInt()) {
-                    true
-                } else {
-                    false
-                }
+                tv_nameTeamA.isEnabled = false;
+                et_x.isEnabled = false
+                r == et_answer.text.toString().toInt()
+
             }
 
             5 -> {
-                r = (x.factorial()/ (3.factorial()*4.factorial()*2.factorial()) ).toInt()
-                Log.d("res",r.toString())
-                if (r == et_answer.text.toString().toInt()) {
-                    true
-                } else {
-                    false
-                }
+
+                //  r = (x.factorial()/ (3.factorial()*4.factorial()*2.factorial()) ).toInt()
+                tv_nameTeamA.isEnabled = true
+                et_x.isEnabled = true
+                Log.d("res 5", x.toString())
+                et_answer.text.toString().toInt() == 26
+
             }
 
             6 -> {
                 r = (x.factorial() / ((x - 2).factorial())).toInt()
-                if (r == et_answer.text.toString().toInt()) {
-                    true
-                } else {
-                    false
-                }
+                r == et_answer.text.toString().toInt()
             }
 
             else -> false
         }
+    }
+
+    private fun disableEditText(editText: EditText) {
+        editText.isFocusable = false
+        editText.isEnabled = false
+        editText.isCursorVisible = false
+        editText.keyListener = null
+        editText.setBackgroundColor(Color.TRANSPARENT)
     }
 
 

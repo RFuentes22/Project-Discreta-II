@@ -1,15 +1,15 @@
 package com.project.discretaii_project.Activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import com.marcinmoskala.math.factorial
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.project.discretaii_project.R
-import kotlinx.android.synthetic.main.activity_game.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,13 +17,19 @@ class MainActivity : AppCompatActivity() {
         var intent: Intent
 
         btn_play.setOnClickListener {
-             intent = Intent(this, Game::class.java)
+            intent = Intent(this, Game::class.java)
             startActivity(intent)
         }
 
         about_btn.setOnClickListener {
             intent = Intent(this, About::class.java)
             startActivity(intent)
+        }
+    }
+
+    companion object {
+        fun QuitApp() {
+            exitProcess(0)
         }
     }
 }

@@ -55,11 +55,20 @@
         android:text="Incorrectas"
         ></TextView>
 
+    <LinearLayout
+        android:layout_width="380sp"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+
+
     <Button
         android:id="@+id/btn_retry"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="0dp"
         android:textSize="20dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -68,4 +77,21 @@
         android:textColor="@android:color/holo_green_dark"
         android:background="@android:color/holo_blue_light"
         android:text="Reintentar"></Button>
+
+        <Button
+            android:id="@+id/btn_exit"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@android:color/holo_blue_light"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:text="Salir"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="0dp" />
+    </LinearLayout>
 </LinearLayout>
