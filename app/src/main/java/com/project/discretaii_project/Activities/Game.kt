@@ -11,6 +11,7 @@ import com.marcinmoskala.math.factorial
 import com.marcinmoskala.math.pow
 import com.project.discretaii_project.R
 import kotlinx.android.synthetic.main.activity_game.*
+import kotlin.system.exitProcess
 
 
 class Game : AppCompatActivity() {

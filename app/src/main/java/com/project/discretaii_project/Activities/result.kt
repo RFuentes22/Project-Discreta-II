@@ -2,8 +2,9 @@ package com.project.discretaii_project.Activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.project.discretaii_project.Activities.MainActivity
 import com.project.discretaii_project.R
 import kotlinx.android.synthetic.main.activity_result.*
 
@@ -27,11 +28,7 @@ class result : AppCompatActivity() {
 
         }
 
-        btn_exit.setOnClickListener {
-            MainActivity.QuitApp()
-            //exitProcess(0)
 
-        }
     }
     override fun onBackPressed() {}
 }

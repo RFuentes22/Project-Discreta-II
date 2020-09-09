@@ -26,9 +26,5 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    companion object {
-        fun QuitApp() {
-            exitProcess(0)
-        }
-    }
+
 }
